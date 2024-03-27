@@ -8,21 +8,20 @@ public class minDays {
     }
 
     public static int minDays(int[] bloomDay, int m, int k) {
-        long totalFlowersRequired = (long) m * k;
-        int n = bloomDay.length;
-        if (totalFlowersRequired <= n) {
-            int start = 1;
-            int end = maxDay(bloomDay);
-            while (start <= end) {
-                int mid = start + (start - end) / 2;
-
-
-
-
-            }
-           return start;
+        if ((long) m * k > bloomDay.length) {
+            return -1;
         }
-        return -1;
+        int start = 1;
+        int end = maxDay(bloomDay);
+        while (start < end) {
+            int mid = start + (end - start) / 2;
+            if (bouquetPossible(bloomDay, mid, k, m)) {
+                end = mid;
+            } else {
+                start = mid + 1;
+            }
+        }
+        return start;
     }
 
     public static int maxDay(int[] bloomDay) {
@@ -34,8 +33,22 @@ public class minDays {
         return maxDay;
     }
 
-//    public static boolean isPossible(int[] bloomDay, int mid, int m, int k){
-//
-//    }
+    public static boolean bouquetPossible(int[] bloomDay, int mid, int k, int m) {
+        int bouquetCount = 0;
+        int flowerCount = 0;
+        //find the maximum:
+        for (int i = 0; i < bloomDay.length; i++) {
+            if (bloomDay[i] <= mid) {
+                flowerCount++;
+                if (flowerCount == k) {
+                    bouquetCount++;
+                    flowerCount = 0;
+                }
+            } else {
+                flowerCount = 0;
+            }
+        }
+        return bouquetCount >= m;
+    }
 
 }
