@@ -23,6 +23,7 @@ public class aggressiveCows {
     }
 
     private static boolean canWePlace(int[] stalls, int mid, int k) {
+        return false;
     }
 
     public static int max(int[] stalls){
