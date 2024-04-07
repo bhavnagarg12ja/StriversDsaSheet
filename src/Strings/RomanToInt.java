@@ -19,14 +19,15 @@ public class RomanToInt {
         map.put('D', 500);
         map.put('M', 1000);
         int result = 0;
-        for(int i = s.length()-1; i > 0;i--){
+        int previous = 0;
+        for(int i = s.length()-1; i >= 0;i--){
             int value = map.get(s.charAt(i));
-            int previous = map.get(s.charAt(i-1));
             if(value < previous){
                 result -= value;
             }else{
                 result += value;
             }
+            previous = value;
         }
         return result;
     }
