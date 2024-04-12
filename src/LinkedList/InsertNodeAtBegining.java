@@ -31,8 +31,10 @@ public class InsertNodeAtBegining {
 class ListNode {
     int value;
     ListNode next;
+    ListNode back;
     ListNode(int x) {
         value = x;
         next = null;
+        back = null;
     }
 }
