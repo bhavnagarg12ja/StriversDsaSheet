@@ -15,7 +15,6 @@ public class ReverseSingleList {
         head = reverse(head);
         System.out.println("Reversed LinkedList: ");
         PrintList(head);
-
     }
     public static ListNode reverse(ListNode head){
         ListNode curr = head;
