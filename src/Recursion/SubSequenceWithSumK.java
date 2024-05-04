@@ -44,6 +44,7 @@ public class SubSequenceWithSumK {
                 return true;
             }
             return false;
+
         }
         current.add(nums[index]);
         s += nums[index];
