@@ -17,6 +17,7 @@ public class Subsequence {
         List<List<Integer>> subsequences = new ArrayList<>();
         generateSubsequences(nums, 0, new ArrayList<>(), subsequences);
         return subsequences;
+
     }
 
     private static void generateSubsequences(int[] nums, int index, List<Integer> current, List<List<Integer>> subsequences) {
