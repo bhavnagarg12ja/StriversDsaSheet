@@ -11,6 +11,7 @@ public class Subsequence {
         for (List<Integer> subsequence : subsequences) {
             System.out.println(subsequence);
         }
+
     }
 
     public static List<List<Integer>> generateSubsequences(int[] nums) {
